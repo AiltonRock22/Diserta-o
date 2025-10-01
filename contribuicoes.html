@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contribuições Coletadas - Filosofia Digital</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--secondary-color);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0.5rem;
+            transition: background 0.3s;
+        }
+        
+        .btn:hover {
+            background: var(--primary-color);
+        }
+        
+        .btn-accent {
+            background: var(--accent-color);
+        }
+        
+        .contribuicao-card {
+            background: white;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-left: 4px solid var(--secondary-color);
+        }
+        
+        .contribuicao-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .perfil-badge {
+            background: var(--secondary-color);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        .contribuicao-data {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .contribuicao-section {
+            margin-bottom: 1.5rem;
+        }
+        
+        .contribuicao-section h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .contribuicao-section p {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 4px;
+            border-left: 3px solid var(--secondary-color);
+            margin: 0;
+        }
+        
+        .info-box {
+            background: #e8f4fd;
+            border: 1px solid var(--secondary-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: 3rem;
+            color: #666;
+        }
+        
+        .instructions {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .instructions ol {
+            text-align: left;
+            margin: 1rem 0;
+        }
+        
+        .instructions li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Contribuições Coletadas</h1>
+            <p>Experiências e reflexões sobre filosofia e cibercultura na educação</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div style="text-align: center; margin-bottom: 2rem;">
+            <a href="index.html" class="btn">← Voltar para Página Principal</a>
+            <a href="index.html#participar" class="btn btn-accent">➕ Nova Contribuição</a>
+        </div>
+        
+        <div class="info-box">
+            <h3>🔒 Respeito à Privacidade</h3>
+            <p>Todas as contribuições são publicadas de forma anônima. Dados pessoais como nome, escola e e-mail são utilizados apenas para fins de pesquisa acadêmica e <strong>não são divulgados publicamente</strong>.</p>
+        </div>
+
+        <div class="instructions">
+            <h3>📊 Como Visualizar as Contribuições Completas</h3>
+            <p>Para acessar todas as contribuições coletadas:</p>
+            <ol>
+                <li>Acesse o <a href="https://docs.google.com/forms/d/1FAIpQLSdLc721XFzDzlku7E6r2PIrwnQD4k0fYMY7OCwGFjVaGTBUXA" target="_blank">Google Forms da pesquisa</a></li>
+                <li>Clique na aba <strong>"Respostas"</strong></li>
+                <li>Visualize no formato de <strong>planilha</strong> ou <strong>resumo</strong></li>
+                <li>Para exportar: Clique no ícone de planilha 📊 → "Criar uma planilha"</li>
+            </ol>
+        </div>
+
+        <!-- Exemplos de contribuições (para demonstração) -->
+        <div class="contribuicao-card">
+            <div class="contribuicao-header">
+                <span class="perfil-badge">👨‍🏫 Professor</span>
+                <span class="contribuicao-data">15/01/2024</span>
+            </div>
+            
+            <div class="contribuicao-section">
+                <h4>📝 Experiência com Tecnologia na Educação</h4>
+                <p>Utilizo plataformas digitais para promover discussões filosóficas com os alunos, criando fóruns online onde podem debater temas complexos com mais liberdade e profundidade. A tecnologia permite que estudantes mais tímidos também participem ativamente.</p>
+            </div>
+            
+            <div class="contribuicao-section">
+                <h4>🎯 Desafios Identificados</h4>
+                <p>A resistência à tecnologia por parte de alguns colegas e a falta de infraestrutura adequada nas escolas. Muitas vezes precisamos usar nossos próprios recursos para implementar atividades digitais.</p>
+            </div>
+            
+            <div class="contribuicao-section">
+                <h4>💡 Sugestões</h4>
+                <p>Capacitação continuada para professores e investimento em infraestrutura tecnológica nas escolas públicas.</p>
+            </div>
+        </div>
+
+        <div class="contribuicao-card">
+            <div class="contribuicao-header">
+                <span class="perfil-badge">🎓 Estudante</span>
+                <span class="contribuicao-data">10/01/2024</span>
+            </div>
+            
+            <div class="contribuicao-section">
+                <h4>📝 Experiência com Tecnologia na Educação</h4>
+                <p>As aulas de filosofia com recursos digitais tornam o conteúdo mais interessante e acessível. Gosto especialmente dos vídeos, podcasts e debates online que complementam as aulas presenciais.</p>
+            </div>
+            
+            <div class="contribuicao-section">
+                <h4>🎯 Desafios Identificados</h4>
+                <p>Muitos alunos não têm acesso à internet de qualidade em casa, o que cria desigualdades no aprendizado. Além disso, alguns professores não sabem usar bem as ferramentas digitais.</p>
+            </div>
+        </div>
+
+        <div class="contribuicao-card">
+            <div class="contribuicao-header">
+                <span class="perfil-badge">🔬 Pesquisador</span>
+                <span class="contribuicao-data">05/01/2024</span>
+            </div>
+            
+            <div class="contribuicao-section">
+                <h4>📝 Experiência com Tecnologia na Educação</h4>
+                <p>Desenvolvo pesquisas sobre o impacto das tecnologias digitais no ensino de filosofia. Observo que as ferramentas digitais podem potencializar o pensamento crítico quando bem utilizadas.</p>
+            </div>
+            
+            <div class="contribuicao-section">
+                <h4>🎯 Desafios Identificados</h4>
+                <p>Falta de formação específica para professores sobre como integrar tecnologia e filosofia de forma crítica. Muitas vezes a tecnologia é usada apenas como substituto do quadro negro.</p>
+            </div>
+            
+            <div class="contribuicao-section">
+                <h4>💡 Sugestões</h4>
+                <p>Desenvolvimento de metodologias específicas para o ensino de filosofia na era digital, com foco no pensamento crítico sobre a própria tecnologia.</p>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <p><strong>💡 Sua contribuição é importante!</strong> Compartilhe suas experiências para enriquecer esta pesquisa.</p>
+            <a href="index.html#participar" class="btn btn-accent">Fazer Minha Contribuição</a>
+        </div>
+    </div>
+</body>
+</html>
