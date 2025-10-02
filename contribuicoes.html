@@ -9,6 +9,7 @@
             --primary-color: #2c3e50;
             --secondary-color: #3498db;
             --accent-color: #e74c3c;
+            --success-color: #27ae60;
         }
         
         body {
@@ -30,7 +31,7 @@
         
         .container {
             width: 90%;
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 2rem 0;
         }
@@ -45,6 +46,8 @@
             font-weight: bold;
             margin: 0.5rem;
             transition: background 0.3s;
+            border: none;
+            cursor: pointer;
         }
         
         .btn:hover {
@@ -55,6 +58,54 @@
             background: var(--accent-color);
         }
         
+        .btn-success {
+            background: var(--success-color);
+        }
+        
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .filters {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin: 1rem 0;
+        }
+        
+        .filter-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        
+        .filter-select {
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background: white;
+        }
+        
         .contribuicao-card {
             background: white;
             padding: 1.5rem;
@@ -62,6 +113,11 @@
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             border-left: 4px solid var(--secondary-color);
+            transition: transform 0.2s ease;
+        }
+        
+        .contribuicao-card:hover {
+            transform: translateY(-2px);
         }
         
         .contribuicao-header {
@@ -80,6 +136,15 @@
             border-radius: 15px;
             font-size: 0.8rem;
             font-weight: bold;
+        }
+        
+        .conhecimento-badge {
+            background: var(--success-color);
+            color: white;
+            padding: 0.2rem 0.6rem;
+            border-radius: 10px;
+            font-size: 0.7rem;
+            margin-left: 0.5rem;
         }
         
         .contribuicao-data {
@@ -107,6 +172,46 @@
             margin: 0;
         }
         
+        /* SEÇÃO DE EXPERIÊNCIAS COM TECNOLOGIA */
+        .experiencias-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin: 3rem 0;
+        }
+        
+        .experiencia-item {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+            border-left: 4px solid var(--success-color);
+        }
+        
+        .experiencia-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .ferramentas-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        
+        .ferramenta-tag {
+            background: #e8f4fd;
+            color: var(--secondary-color);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            border: 1px solid var(--secondary-color);
+        }
+        
         .info-box {
             background: #e8f4fd;
             border: 1px solid var(--secondary-color);
@@ -116,126 +221,388 @@
             text-align: center;
         }
         
+        .privacy-notice {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 3rem;
+            color: #666;
+        }
+        
         .empty-state {
             text-align: center;
             padding: 3rem;
             color: #666;
         }
         
-        .instructions {
-            background: #fff3cd;
-            border: 1px solid #ffeaa7;
-            border-radius: 8px;
-            padding: 1.5rem;
+        .export-buttons {
+            text-align: center;
             margin: 2rem 0;
         }
         
-        .instructions ol {
-            text-align: left;
-            margin: 1rem 0;
-        }
-        
-        .instructions li {
-            margin-bottom: 0.5rem;
+        .section-divider {
+            border: none;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            margin: 3rem 0;
         }
     </style>
 </head>
 <body>
     <header>
         <div class="container">
-            <h1>Contribuições Coletadas</h1>
-            <p>Experiências e reflexões sobre filosofia e cibercultura na educação</p>
+            <h1>Análise das Contribuições - Filosofia Digital</h1>
+            <p>Experiências coletivas sobre tecnologia na educação</p>
         </div>
     </header>
 
     <div class="container">
         <div style="text-align: center; margin-bottom: 2rem;">
-            <a href="index.html" class="btn">← Voltar para Página Principal</a>
-            <a href="index.html#participar" class="btn btn-accent">➕ Nova Contribuição</a>
+            <a href="index.html" class="btn">← Página Principal</a>
+            <a href="https://docs.google.com/forms/d/1FAIpQLSdLc721XFzDzlku7E6r2PIrwnQD4k0fYMY7OCwGFjVaGTBUXA" target="_blank" class="btn btn-accent">➕ Nova Contribuição</a>
         </div>
         
-        <div class="info-box">
-            <h3>🔒 Respeito à Privacidade</h3>
-            <p>Todas as contribuições são publicadas de forma anônima. Dados pessoais como nome, escola e e-mail são utilizados apenas para fins de pesquisa acadêmica e <strong>não são divulgados publicamente</strong>.</p>
+        <div class="privacy-notice">
+            <strong>🔒 Proteção de Dados:</strong> Nenhuma informação pessoal (nome, escola, e-mail) é exibida publicamente. 
+            Apenas dados anonimizados e agregados são compartilhados para análise coletiva.
         </div>
 
-        <div class="instructions">
-            <h3>📊 Como Visualizar as Contribuições Completas</h3>
-            <p>Para acessar todas as contribuições coletadas:</p>
-            <ol>
-                <li>Acesse o <a href="https://docs.google.com/forms/d/1FAIpQLSdLc721XFzDzlku7E6r2PIrwnQD4k0fYMY7OCwGFjVaGTBUXA" target="_blank">Google Forms da pesquisa</a></li>
-                <li>Clique na aba <strong>"Respostas"</strong></li>
-                <li>Visualize no formato de <strong>planilha</strong> ou <strong>resumo</strong></li>
-                <li>Para exportar: Clique no ícone de planilha 📊 → "Criar uma planilha"</li>
-            </ol>
-        </div>
-
-        <!-- Exemplos de contribuições (para demonstração) -->
-        <div class="contribuicao-card">
-            <div class="contribuicao-header">
-                <span class="perfil-badge">👨‍🏫 Professor</span>
-                <span class="contribuicao-data">15/01/2024</span>
+        <!-- Estatísticas -->
+        <div class="stats-container" id="stats-container">
+            <div class="stat-card">
+                <div class="stat-number" id="total-contributions">0</div>
+                <div>Total de Contribuições</div>
             </div>
-            
-            <div class="contribuicao-section">
-                <h4>📝 Experiência com Tecnologia na Educação</h4>
-                <p>Utilizo plataformas digitais para promover discussões filosóficas com os alunos, criando fóruns online onde podem debater temas complexos com mais liberdade e profundidade. A tecnologia permite que estudantes mais tímidos também participem ativamente.</p>
+            <div class="stat-card">
+                <div class="stat-number" id="professores-count">0</div>
+                <div>Professores</div>
             </div>
-            
-            <div class="contribuicao-section">
-                <h4>🎯 Desafios Identificados</h4>
-                <p>A resistência à tecnologia por parte de alguns colegas e a falta de infraestrutura adequada nas escolas. Muitas vezes precisamos usar nossos próprios recursos para implementar atividades digitais.</p>
+            <div class="stat-card">
+                <div class="stat-number" id="estudantes-count">0</div>
+                <div>Estudantes</div>
             </div>
-            
-            <div class="contribuicao-section">
-                <h4>💡 Sugestões</h4>
-                <p>Capacitação continuada para professores e investimento em infraestrutura tecnológica nas escolas públicas.</p>
+            <div class="stat-card">
+                <div class="stat-number" id="tecnologia-count">0</div>
+                <div>Usam Tecnologia</div>
             </div>
         </div>
 
-        <div class="contribuicao-card">
-            <div class="contribuicao-header">
-                <span class="perfil-badge">🎓 Estudante</span>
-                <span class="contribuicao-data">10/01/2024</span>
-            </div>
-            
-            <div class="contribuicao-section">
-                <h4>📝 Experiência com Tecnologia na Educação</h4>
-                <p>As aulas de filosofia com recursos digitais tornam o conteúdo mais interessante e acessível. Gosto especialmente dos vídeos, podcasts e debates online que complementam as aulas presenciais.</p>
-            </div>
-            
-            <div class="contribuicao-section">
-                <h4>🎯 Desafios Identificados</h4>
-                <p>Muitos alunos não têm acesso à internet de qualidade em casa, o que cria desigualdades no aprendizado. Além disso, alguns professores não sabem usar bem as ferramentas digitais.</p>
-            </div>
-        </div>
-
-        <div class="contribuicao-card">
-            <div class="contribuicao-header">
-                <span class="perfil-badge">🔬 Pesquisador</span>
-                <span class="contribuicao-data">05/01/2024</span>
-            </div>
-            
-            <div class="contribuicao-section">
-                <h4>📝 Experiência com Tecnologia na Educação</h4>
-                <p>Desenvolvo pesquisas sobre o impacto das tecnologias digitais no ensino de filosofia. Observo que as ferramentas digitais podem potencializar o pensamento crítico quando bem utilizadas.</p>
-            </div>
-            
-            <div class="contribuicao-section">
-                <h4>🎯 Desafios Identificados</h4>
-                <p>Falta de formação específica para professores sobre como integrar tecnologia e filosofia de forma crítica. Muitas vezes a tecnologia é usada apenas como substituto do quadro negro.</p>
-            </div>
-            
-            <div class="contribuicao-section">
-                <h4>💡 Sugestões</h4>
-                <p>Desenvolvimento de metodologias específicas para o ensino de filosofia na era digital, com foco no pensamento crítico sobre a própria tecnologia.</p>
+        <!-- Filtros -->
+        <div class="filters">
+            <h4>🔍 Filtros de Análise</h4>
+            <div class="filter-group">
+                <select id="filter-perfil" class="filter-select" onchange="filterContributions()">
+                    <option value="">Todos os Perfis</option>
+                    <option value="Professor">Apenas Professores</option>
+                    <option value="Estudante">Apenas Estudantes</option>
+                    <option value="Gestor Educacional">Apenas Gestores</option>
+                    <option value="Pesquisador">Apenas Pesquisadores</option>
+                </select>
+                
+                <select id="filter-conhecimento" class="filter-select" onchange="filterContributions()">
+                    <option value="">Todos os Níveis</option>
+                    <option value="Iniciante">Iniciante</option>
+                    <option value="Intermediário">Intermediário</option>
+                    <option value="Avançado">Avançado</option>
+                    <option value="Especialista">Especialista</option>
+                </select>
+                
+                <button onclick="clearFilters()" class="btn" style="padding: 0.5rem 1rem;">Limpar Filtros</button>
             </div>
         </div>
 
-        <div class="info-box">
-            <p><strong>💡 Sua contribuição é importante!</strong> Compartilhe suas experiências para enriquecer esta pesquisa.</p>
-            <a href="index.html#participar" class="btn btn-accent">Fazer Minha Contribuição</a>
+        <!-- Lista de Contribuições (SEM DADOS PESSOAIS) -->
+        <div id="contribuicoes-container">
+            <div class="loading">📊 Carregando análises...</div>
+        </div>
+
+        <hr class="section-divider">
+
+        <!-- SEÇÃO ESPECIAL: EXPERIÊNCIAS COM TECNOLOGIA -->
+        <div class="experiencias-section">
+            <h2>💻 Experiências com Tecnologia na Educação</h2>
+            <p class="info-box">
+                Compilação anônima das experiências, ferramentas e práticas compartilhadas pelos participantes
+            </p>
+            
+            <div id="experiencias-container">
+                <div class="loading">🔄 Coletando experiências...</div>
+            </div>
+        </div>
+
+        <div class="export-buttons">
+            <a href="https://docs.google.com/spreadsheets/d/1wIlzrq4WPdpuzdCRTNLKpqSXW8BvJGnc4SVQqtSnD84/edit#gid=1649898650" 
+               target="_blank" class="btn btn-success">📈 Acessar Dados Completos (Restrito)</a>
         </div>
     </div>
+
+    <script>
+        // ID da sua planilha pública
+        const SHEET_ID = '1wIlzrq4WPdpuzdCRTNLKpqSXW8BvJGnc4SVQqtSnD84';
+        const SHEET_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json&gid=1649898650`;
+        
+        let allContributions = [];
+        let filteredContributions = [];
+
+        // Função para carregar dados da planilha
+        async function loadSheetData() {
+            try {
+                document.getElementById('contribuicoes-container').innerHTML = '<div class="loading">📊 Carregando análises...</div>';
+                document.getElementById('experiencias-container').innerHTML = '<div class="loading">🔄 Coletando experiências...</div>';
+                
+                const response = await fetch(SHEET_URL);
+                const text = await response.text();
+                
+                const json = JSON.parse(text.substring(47, text.length - 2));
+                processSheetData(json);
+                
+            } catch (error) {
+                console.error('Erro ao carregar dados:', error);
+                showError();
+            }
+        }
+
+        // Processar dados mantendo privacidade
+        function processSheetData(data) {
+            if (!data.table || !data.table.rows) {
+                showEmptyState();
+                return;
+            }
+
+            const rows = data.table.rows;
+            const headers = data.table.cols.map(col => col.label);
+            
+            allContributions = [];
+            
+            // Processar cada linha (pular cabeçalho)
+            for (let i = 1; i < rows.length; i++) {
+                const row = rows[i];
+                const contribution = {
+                    id: i, // ID anônimo
+                    timestamp: row.c[0] ? row.c[0].v : null
+                };
+                
+                // Mapear colunas mantendo apenas dados não-pessoais
+                headers.forEach((header, index) => {
+                    if (row.c[index] && row.c[index].v) {
+                        // NÃO incluir nome, escola, email
+                        if (!['Nome completo', 'Escola/Instituição', 'E-mail'].includes(header)) {
+                            contribution[header] = row.c[index].v;
+                        }
+                    }
+                });
+                
+                if (contribution['Perfil']) {
+                    allContributions.push(contribution);
+                }
+            }
+            
+            updateStatistics();
+            filterContributions();
+            displayExperiencias();
+        }
+
+        // Atualizar estatísticas
+        function updateStatistics() {
+            const total = allContributions.length;
+            const professores = allContributions.filter(c => c.Perfil === 'Professor').length;
+            const estudantes = allContributions.filter(c => c.Perfil === 'Estudante').length;
+            
+            // Contar quem usa tecnologia (tem ferramentas listadas)
+            const tecnologiaCount = allContributions.filter(c => 
+                c['Ferramentas utilizadas'] && 
+                !c['Ferramentas utilizadas'].includes('Não utilizo')
+            ).length;
+
+            document.getElementById('total-contributions').textContent = total;
+            document.getElementById('professores-count').textContent = professores;
+            document.getElementById('estudantes-count').textContent = estudantes;
+            document.getElementById('tecnologia-count').textContent = tecnologiaCount;
+        }
+
+        // Filtrar contribuições
+        function filterContributions() {
+            const perfilFilter = document.getElementById('filter-perfil').value;
+            const conhecimentoFilter = document.getElementById('filter-conhecimento').value;
+
+            filteredContributions = allContributions.filter(contrib => {
+                let match = true;
+                
+                if (perfilFilter && contrib.Perfil !== perfilFilter) match = false;
+                if (conhecimentoFilter && contrib['Conhecimento em informática'] !== conhecimentoFilter) match = false;
+                
+                return match;
+            });
+
+            displayContributions(filteredContributions);
+        }
+
+        // Limpar filtros
+        function clearFilters() {
+            document.getElementById('filter-perfil').value = '';
+            document.getElementById('filter-conhecimento').value = '';
+            filterContributions();
+        }
+
+        // Exibir contribuições (SEM DADOS PESSOAIS)
+        function displayContributions(contributions) {
+            const container = document.getElementById('contribuicoes-container');
+            
+            if (contributions.length === 0) {
+                container.innerHTML = '<div class="empty-state">🔍 Nenhuma contribuição encontrada com os filtros atuais.</div>';
+                return;
+            }
+
+            container.innerHTML = contributions.map((contrib, index) => {
+                const perfilEmoji = {
+                    'Professor': '👨‍🏫',
+                    'Estudante': '🎓',
+                    'Gestor Educacional': '💼',
+                    'Pesquisador': '🔬'
+                }[contrib.Perfil] || '👤';
+
+                return `
+                    <div class="contribuicao-card">
+                        <div class="contribuicao-header">
+                            <div>
+                                <span class="perfil-badge">${perfilEmoji} ${contrib.Perfil}</span>
+                                ${contrib['Conhecimento em informática'] ? 
+                                    `<span class="conhecimento-badge">${contrib['Conhecimento em informática']}</span>` : ''}
+                            </div>
+                            <span class="contribuicao-data">Contribuição #${index + 1}</span>
+                        </div>
+                        
+                        ${contrib['Conceitos significativos'] ? `
+                        <div class="contribuicao-section">
+                            <h4>🎯 Conceitos Mais Significativos</h4>
+                            <p>${contrib['Conceitos significativos']}</p>
+                        </div>
+                        ` : ''}
+                        
+                        ${contrib['Mudanças na prática'] ? `
+                        <div class="contribuicao-section">
+                            <h4>🔄 Impacto nas Práticas</h4>
+                            <p>${contrib['Mudanças na prática']}</p>
+                        </div>
+                        ` : ''}
+                        
+                        ${contrib['Aplicação prática'] ? `
+                        <div class="contribuicao-section">
+                            <h4>🚀 Aplicação Prática</h4>
+                            <p>${contrib['Aplicação prática']}</p>
+                        </div>
+                        ` : ''}
+                        
+                        ${contrib['Principais desafios'] ? `
+                        <div class="contribuicao-section">
+                            <h4>🎯 Desafios Identificados</h4>
+                            <p>${contrib['Principais desafios']}</p>
+                        </div>
+                        ` : ''}
+                        
+                        ${contrib['Principal aprendizado'] ? `
+                        <div class="contribuicao-section">
+                            <h4>💡 Principal Aprendizado</h4>
+                            <p>${contrib['Principal aprendizado']}</p>
+                        </div>
+                        ` : ''}
+                        
+                        ${contrib['Contribuição das aulas'] ? `
+                        <div class="contribuicao-section">
+                            <h4>🌟 Contribuição das Discussões</h4>
+                            <p>${contrib['Contribuição das aulas']}</p>
+                        </div>
+                        ` : ''}
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // Exibir experiências com tecnologia
+        function displayExperiencias() {
+            const container = document.getElementById('experiencias-container');
+            const experienciasComTecnologia = allContributions.filter(contrib => 
+                contrib['Ferramentas utilizadas'] && 
+                !contrib['Ferramentas utilizadas'].includes('Não utilizo')
+            );
+
+            if (experienciasComTecnologia.length === 0) {
+                container.innerHTML = '<div class="empty-state">💻 Ainda não há experiências com tecnologia registradas.</div>';
+                return;
+            }
+
+            container.innerHTML = experienciasComTecnologia.map((contrib, index) => {
+                const perfilEmoji = {
+                    'Professor': '👨‍🏫',
+                    'Estudante': '🎓',
+                    'Gestor Educacional': '💼',
+                    'Pesquisador': '🔬'
+                }[contrib.Perfil] || '👤';
+
+                // Processar ferramentas para exibir como tags
+                let ferramentasTags = '';
+                if (contrib['Ferramentas utilizadas']) {
+                    const ferramentas = contrib['Ferramentas utilizadas'].split(',').map(f => f.trim());
+                    ferramentasTags = ferramentas.map(ferramenta => 
+                        `<span class="ferramenta-tag">${ferramenta}</span>`
+                    ).join('');
+                }
+
+                return `
+                    <div class="experiencia-item">
+                        <div class="experiencia-header">
+                            <span class="perfil-badge">${perfilEmoji} ${contrib.Perfil}</span>
+                            <span class="contribuicao-data">${contrib['Conhecimento em informática'] || 'Nível não informado'}</span>
+                        </div>
+                        
+                        ${contrib['Ferramentas utilizadas'] ? `
+                        <div>
+                            <strong>🛠️ Ferramentas Utilizadas:</strong>
+                            <div class="ferramentas-tags">
+                                ${ferramentasTags}
+                            </div>
+                        </div>
+                        ` : ''}
+                        
+                        ${contrib['Frequência de uso'] ? `
+                        <div style="margin-top: 0.5rem;">
+                            <strong>📊 Frequência:</strong> ${contrib['Frequência de uso']}
+                        </div>
+                        ` : ''}
+                        
+                        ${contrib['Aplicação prática'] ? `
+                        <div style="margin-top: 0.5rem;">
+                            <strong>💡 Como aplica:</strong> ${contrib['Aplicação prática']}
+                        </div>
+                        ` : ''}
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function showError() {
+            document.getElementById('contribuicoes-container').innerHTML = 
+                '<div class="empty-state">❌ Erro ao carregar dados. Tente novamente.</div>';
+            document.getElementById('experiencias-container').innerHTML = 
+                '<div class="empty-state">❌ Erro ao carregar experiências.</div>';
+        }
+
+        function showEmptyState() {
+            document.getElementById('contribuicoes-container').innerHTML = 
+                '<div class="empty-state">📝 Ainda não há contribuições. Seja o primeiro!</div>';
+            document.getElementById('experiencias-container').innerHTML = 
+                '<div class="empty-state">💻 Compartilhe sua experiência com tecnologia!</div>';
+        }
+
+        // Carregar dados quando a página abrir
+        document.addEventListener('DOMContentLoaded', loadSheetData);
+    </script>
 </body>
 </html>
