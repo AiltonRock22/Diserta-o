@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contribuições Coletadas - Filosofia Digital</title>
+    <title>Experiências com Tecnologia - Filosofia Digital</title>
     <style>
         :root {
             --primary-color: #2c3e50;
@@ -58,10 +58,6 @@
             background: var(--accent-color);
         }
         
-        .btn-success {
-            background: var(--success-color);
-        }
-        
         .stats-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -84,49 +80,36 @@
             margin-bottom: 0.5rem;
         }
         
-        .filters {
+        /* SEÇÃO PRINCIPAL DE EXPERIÊNCIAS */
+        .experiencias-section {
             background: white;
-            padding: 1.5rem;
+            padding: 2rem;
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            margin: 1rem 0;
+            margin: 2rem 0;
         }
         
-        .filter-group {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            align-items: center;
-        }
-        
-        .filter-select {
-            padding: 0.5rem;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            background: white;
-        }
-        
-        .contribuicao-card {
-            background: white;
+        .experiencia-item {
+            background: #f8f9fa;
             padding: 1.5rem;
-            margin: 1rem 0;
+            margin: 1.5rem 0;
             border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             border-left: 4px solid var(--secondary-color);
             transition: transform 0.2s ease;
         }
         
-        .contribuicao-card:hover {
+        .experiencia-item:hover {
             transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
         
-        .contribuicao-header {
+        .experiencia-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 1rem;
             padding-bottom: 0.5rem;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid #ddd;
         }
         
         .perfil-badge {
@@ -144,19 +127,20 @@
             padding: 0.2rem 0.6rem;
             border-radius: 10px;
             font-size: 0.7rem;
-            margin-left: 0.5rem;
         }
         
-        .contribuicao-data {
-            color: #666;
-            font-size: 0.9rem;
+        .experiencia-content {
+            background: white;
+            padding: 1rem;
+            border-radius: 6px;
+            border: 1px solid #e9ecef;
         }
         
-        .contribuicao-section {
-            margin-bottom: 1.5rem;
+        .experiencia-topic {
+            margin: 1rem 0;
         }
         
-        .contribuicao-section h4 {
+        .experiencia-topic h4 {
             color: var(--primary-color);
             margin-bottom: 0.5rem;
             display: flex;
@@ -164,52 +148,12 @@
             gap: 0.5rem;
         }
         
-        .contribuicao-section p {
-            background: #f8f9fa;
-            padding: 1rem;
-            border-radius: 4px;
-            border-left: 3px solid var(--secondary-color);
-            margin: 0;
-        }
-        
-        /* SEÇÃO DE EXPERIÊNCIAS COM TECNOLOGIA */
-        .experiencias-section {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            margin: 3rem 0;
-        }
-        
-        .experiencia-item {
-            background: #f8f9fa;
-            padding: 1.5rem;
-            margin: 1rem 0;
-            border-radius: 8px;
-            border-left: 4px solid var(--success-color);
-        }
-        
-        .experiencia-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1rem;
-        }
-        
-        .ferramentas-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 1rem;
-        }
-        
-        .ferramenta-tag {
+        .dica-item {
             background: #e8f4fd;
-            color: var(--secondary-color);
-            padding: 0.3rem 0.8rem;
-            border-radius: 15px;
-            font-size: 0.8rem;
-            border: 1px solid var(--secondary-color);
+            padding: 1rem;
+            margin: 0.5rem 0;
+            border-radius: 6px;
+            border-left: 3px solid var(--secondary-color);
         }
         
         .info-box {
@@ -242,43 +186,61 @@
             color: #666;
         }
         
-        .export-buttons {
-            text-align: center;
-            margin: 2rem 0;
+        .filters {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin: 1rem 0;
         }
         
-        .section-divider {
-            border: none;
-            height: 2px;
-            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-            margin: 3rem 0;
+        .filter-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        
+        .filter-select {
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--secondary-color);
         }
     </style>
 </head>
 <body>
     <header>
         <div class="container">
-            <h1>Análise das Contribuições - Filosofia Digital</h1>
-            <p>Experiências coletivas sobre tecnologia na educação</p>
+            <h1>Experiências com Tecnologia na Educação</h1>
+            <p>Compartilhamento coletivo de práticas e reflexões</p>
         </div>
     </header>
 
     <div class="container">
         <div style="text-align: center; margin-bottom: 2rem;">
             <a href="index.html" class="btn">← Página Principal</a>
-            <a href="https://docs.google.com/forms/d/1FAIpQLSdLc721XFzDzlku7E6r2PIrwnQD4k0fYMY7OCwGFjVaGTBUXA" target="_blank" class="btn btn-accent">➕ Nova Contribuição</a>
+            <a href="https://docs.google.com/forms/d/1FAIpQLSdLc721XFzDzlku7E6r2PIrwnQD4k0fYMY7OCwGFjVaGTBUXA" target="_blank" class="btn btn-accent">➕ Compartilhar Minha Experiência</a>
         </div>
         
         <div class="privacy-notice">
-            <strong>🔒 Proteção de Dados:</strong> Nenhuma informação pessoal (nome, escola, e-mail) é exibida publicamente. 
-            Apenas dados anonimizados e agregados são compartilhados para análise coletiva.
+            <strong>🔒 Proteção de Dados:</strong> Todas as experiências são compartilhadas de forma anônima. 
+            Nenhuma informação pessoal identificável é divulgada.
         </div>
 
         <!-- Estatísticas -->
         <div class="stats-container" id="stats-container">
             <div class="stat-card">
-                <div class="stat-number" id="total-contributions">0</div>
-                <div>Total de Contribuições</div>
+                <div class="stat-number" id="total-experiencias">0</div>
+                <div>Experiências Compartilhadas</div>
             </div>
             <div class="stat-card">
                 <div class="stat-number" id="professores-count">0</div>
@@ -289,57 +251,43 @@
                 <div>Estudantes</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number" id="tecnologia-count">0</div>
-                <div>Usam Tecnologia</div>
+                <div class="stat-number" id="dicas-count">0</div>
+                <div>Dicas Compartilhadas</div>
             </div>
         </div>
 
-        <!-- Filtros -->
+        <!-- Filtros Simples -->
         <div class="filters">
-            <h4>🔍 Filtros de Análise</h4>
+            <h4>🔍 Filtrar por Perfil</h4>
             <div class="filter-group">
-                <select id="filter-perfil" class="filter-select" onchange="filterContributions()">
-                    <option value="">Todos os Perfis</option>
+                <select id="filter-perfil" class="filter-select" onchange="filterExperiencias()">
+                    <option value="">Todas as Experiências</option>
                     <option value="Professor">Apenas Professores</option>
                     <option value="Estudante">Apenas Estudantes</option>
                     <option value="Gestor Educacional">Apenas Gestores</option>
                     <option value="Pesquisador">Apenas Pesquisadores</option>
                 </select>
                 
-                <select id="filter-conhecimento" class="filter-select" onchange="filterContributions()">
-                    <option value="">Todos os Níveis</option>
-                    <option value="Iniciante">Iniciante</option>
-                    <option value="Intermediário">Intermediário</option>
-                    <option value="Avançado">Avançado</option>
-                    <option value="Especialista">Especialista</option>
-                </select>
-                
-                <button onclick="clearFilters()" class="btn" style="padding: 0.5rem 1rem;">Limpar Filtros</button>
+                <button onclick="clearFilters()" class="btn" style="padding: 0.5rem 1rem;">Mostrar Todas</button>
             </div>
         </div>
 
-        <!-- Lista de Contribuições (SEM DADOS PESSOAIS) -->
-        <div id="contribuicoes-container">
-            <div class="loading">📊 Carregando análises...</div>
-        </div>
-
-        <hr class="section-divider">
-
-        <!-- SEÇÃO ESPECIAL: EXPERIÊNCIAS COM TECNOLOGIA -->
+        <!-- SEÇÃO PRINCIPAL DE EXPERIÊNCIAS -->
         <div class="experiencias-section">
-            <h2>💻 Experiências com Tecnologia na Educação</h2>
+            <h2 class="section-title">💡 Experiências com Tecnologia em Sala de Aula</h2>
             <p class="info-box">
-                Compilação anônima das experiências, ferramentas e práticas compartilhadas pelos participantes
+                Compilação das vivências, desafios e melhores práticas compartilhadas pela comunidade educacional
             </p>
             
             <div id="experiencias-container">
-                <div class="loading">🔄 Coletando experiências...</div>
+                <div class="loading">📚 Coletando experiências valiosas...</div>
             </div>
         </div>
 
-        <div class="export-buttons">
-            <a href="https://docs.google.com/spreadsheets/d/1wIlzrq4WPdpuzdCRTNLKpqSXW8BvJGnc4SVQqtSnD84/edit#gid=1649898650" 
-               target="_blank" class="btn btn-success">📈 Acessar Dados Completos (Restrito)</a>
+        <div class="info-box">
+            <h3>🎯 Sua Experiência é Importante!</h3>
+            <p>Compartilhe suas vivências com tecnologia na educação e ajude a construir um repositório coletivo de práticas significativas.</p>
+            <a href="https://docs.google.com/forms/d/1FAIpQLSdLc721XFzDzlku7E6r2PIrwnQD4k0fYMY7OCwGFjVaGTBUXA" target="_blank" class="btn btn-accent">Compartilhar Minha Experiência</a>
         </div>
     </div>
 
@@ -348,14 +296,13 @@
         const SHEET_ID = '1wIlzrq4WPdpuzdCRTNLKpqSXW8BvJGnc4SVQqtSnD84';
         const SHEET_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json&gid=1649898650`;
         
-        let allContributions = [];
-        let filteredContributions = [];
+        let allExperiencias = [];
+        let filteredExperiencias = [];
 
         // Função para carregar dados da planilha
         async function loadSheetData() {
             try {
-                document.getElementById('contribuicoes-container').innerHTML = '<div class="loading">📊 Carregando análises...</div>';
-                document.getElementById('experiencias-container').innerHTML = '<div class="loading">🔄 Coletando experiências...</div>';
+                document.getElementById('experiencias-container').innerHTML = '<div class="loading">📚 Coletando experiências valiosas...</div>';
                 
                 const response = await fetch(SHEET_URL);
                 const text = await response.text();
@@ -369,7 +316,7 @@
             }
         }
 
-        // Processar dados mantendo privacidade
+        // Processar dados focando nas experiências
         function processSheetData(data) {
             if (!data.table || !data.table.rows) {
                 showEmptyState();
@@ -379,226 +326,167 @@
             const rows = data.table.rows;
             const headers = data.table.cols.map(col => col.label);
             
-            allContributions = [];
+            allExperiencias = [];
             
             // Processar cada linha (pular cabeçalho)
             for (let i = 1; i < rows.length; i++) {
                 const row = rows[i];
-                const contribution = {
+                const experiencia = {
                     id: i, // ID anônimo
-                    timestamp: row.c[0] ? row.c[0].v : null
                 };
                 
-                // Mapear colunas mantendo apenas dados não-pessoais
+                // Mapear colunas mantendo apenas dados relevantes
                 headers.forEach((header, index) => {
                     if (row.c[index] && row.c[index].v) {
-                        // NÃO incluir nome, escola, email
-                        if (!['Nome completo', 'Escola/Instituição', 'E-mail'].includes(header)) {
-                            contribution[header] = row.c[index].v;
+                        // Focar na experiência com tecnologia
+                        if (header === 'Deixe aqui um pouco da sua experiência com a tecnologia em sala e qual a melhor forma de se utilizar.') {
+                            experiencia.experiencia = row.c[index].v;
+                        }
+                        // Manter perfil para contexto
+                        else if (header === 'Perfil') {
+                            experiencia.perfil = row.c[index].v;
+                        }
+                        // Manter conhecimento para contexto
+                        else if (header === 'Conhecimento em informática') {
+                            experiencia.conhecimento = row.c[index].v;
                         }
                     }
                 });
                 
-                if (contribution['Perfil']) {
-                    allContributions.push(contribution);
+                // Só adicionar se tiver experiência compartilhada
+                if (experiencia.experiencia && experiencia.perfil) {
+                    allExperiencias.push(experiencia);
                 }
             }
             
             updateStatistics();
-            filterContributions();
-            displayExperiencias();
+            filterExperiencias();
         }
 
         // Atualizar estatísticas
         function updateStatistics() {
-            const total = allContributions.length;
-            const professores = allContributions.filter(c => c.Perfil === 'Professor').length;
-            const estudantes = allContributions.filter(c => c.Perfil === 'Estudante').length;
+            const total = allExperiencias.length;
+            const professores = allExperiencias.filter(e => e.perfil === 'Professor').length;
+            const estudantes = allExperiencias.filter(e => e.perfil === 'Estudante').length;
             
-            // Contar quem usa tecnologia (tem ferramentas listadas)
-            const tecnologiaCount = allContributions.filter(c => 
-                c['Ferramentas utilizadas'] && 
-                !c['Ferramentas utilizadas'].includes('Não utilizo')
+            // Contar experiências que contêm dicas práticas
+            const dicasCount = allExperiencias.filter(e => 
+                e.experiencia && 
+                (e.experiencia.toLowerCase().includes('dica') || 
+                 e.experiencia.toLowerCase().includes('suger') ||
+                 e.experiencia.toLowerCase().includes('recomend') ||
+                 e.experiencia.toLowerCase().includes('melhor'))
             ).length;
 
-            document.getElementById('total-contributions').textContent = total;
+            document.getElementById('total-experiencias').textContent = total;
             document.getElementById('professores-count').textContent = professores;
             document.getElementById('estudantes-count').textContent = estudantes;
-            document.getElementById('tecnologia-count').textContent = tecnologiaCount;
+            document.getElementById('dicas-count').textContent = dicasCount;
         }
 
-        // Filtrar contribuições
-        function filterContributions() {
+        // Filtrar experiências
+        function filterExperiencias() {
             const perfilFilter = document.getElementById('filter-perfil').value;
-            const conhecimentoFilter = document.getElementById('filter-conhecimento').value;
 
-            filteredContributions = allContributions.filter(contrib => {
-                let match = true;
-                
-                if (perfilFilter && contrib.Perfil !== perfilFilter) match = false;
-                if (conhecimentoFilter && contrib['Conhecimento em informática'] !== conhecimentoFilter) match = false;
-                
-                return match;
+            filteredExperiencias = allExperiencias.filter(exp => {
+                if (perfilFilter && exp.perfil !== perfilFilter) return false;
+                return true;
             });
 
-            displayContributions(filteredContributions);
+            displayExperiencias(filteredExperiencias);
         }
 
         // Limpar filtros
         function clearFilters() {
             document.getElementById('filter-perfil').value = '';
-            document.getElementById('filter-conhecimento').value = '';
-            filterContributions();
+            filterExperiencias();
         }
 
-        // Exibir contribuições (SEM DADOS PESSOAIS)
-        function displayContributions(contributions) {
-            const container = document.getElementById('contribuicoes-container');
+        // Exibir experiências
+        function displayExperiencias(experiencias) {
+            const container = document.getElementById('experiencias-container');
             
-            if (contributions.length === 0) {
-                container.innerHTML = '<div class="empty-state">🔍 Nenhuma contribuição encontrada com os filtros atuais.</div>';
-                return;
-            }
-
-            container.innerHTML = contributions.map((contrib, index) => {
-                const perfilEmoji = {
-                    'Professor': '👨‍🏫',
-                    'Estudante': '🎓',
-                    'Gestor Educacional': '💼',
-                    'Pesquisador': '🔬'
-                }[contrib.Perfil] || '👤';
-
-                return `
-                    <div class="contribuicao-card">
-                        <div class="contribuicao-header">
-                            <div>
-                                <span class="perfil-badge">${perfilEmoji} ${contrib.Perfil}</span>
-                                ${contrib['Conhecimento em informática'] ? 
-                                    `<span class="conhecimento-badge">${contrib['Conhecimento em informática']}</span>` : ''}
-                            </div>
-                            <span class="contribuicao-data">Contribuição #${index + 1}</span>
-                        </div>
-                        
-                        ${contrib['Conceitos significativos'] ? `
-                        <div class="contribuicao-section">
-                            <h4>🎯 Conceitos Mais Significativos</h4>
-                            <p>${contrib['Conceitos significativos']}</p>
-                        </div>
-                        ` : ''}
-                        
-                        ${contrib['Mudanças na prática'] ? `
-                        <div class="contribuicao-section">
-                            <h4>🔄 Impacto nas Práticas</h4>
-                            <p>${contrib['Mudanças na prática']}</p>
-                        </div>
-                        ` : ''}
-                        
-                        ${contrib['Aplicação prática'] ? `
-                        <div class="contribuicao-section">
-                            <h4>🚀 Aplicação Prática</h4>
-                            <p>${contrib['Aplicação prática']}</p>
-                        </div>
-                        ` : ''}
-                        
-                        ${contrib['Principais desafios'] ? `
-                        <div class="contribuicao-section">
-                            <h4>🎯 Desafios Identificados</h4>
-                            <p>${contrib['Principais desafios']}</p>
-                        </div>
-                        ` : ''}
-                        
-                        ${contrib['Principal aprendizado'] ? `
-                        <div class="contribuicao-section">
-                            <h4>💡 Principal Aprendizado</h4>
-                            <p>${contrib['Principal aprendizado']}</p>
-                        </div>
-                        ` : ''}
-                        
-                        ${contrib['Contribuição das aulas'] ? `
-                        <div class="contribuicao-section">
-                            <h4>🌟 Contribuição das Discussões</h4>
-                            <p>${contrib['Contribuição das aulas']}</p>
-                        </div>
-                        ` : ''}
+            if (experiencias.length === 0) {
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <h3>📝 Ainda não há experiências compartilhadas</h3>
+                        <p>Seja o primeiro a compartilhar sua vivência com tecnologia na educação!</p>
+                        <a href="https://docs.google.com/forms/d/1FAIpQLSdLc721XFzDzlku7E6r2PIrwnQD4k0fYMY7OCwGFjVaGTBUXA" 
+                           target="_blank" class="btn btn-accent">Compartilhar Minha Experiência</a>
                     </div>
                 `;
-            }).join('');
-        }
-
-        // Exibir experiências com tecnologia
-        function displayExperiencias() {
-            const container = document.getElementById('experiencias-container');
-            const experienciasComTecnologia = allContributions.filter(contrib => 
-                contrib['Ferramentas utilizadas'] && 
-                !contrib['Ferramentas utilizadas'].includes('Não utilizo')
-            );
-
-            if (experienciasComTecnologia.length === 0) {
-                container.innerHTML = '<div class="empty-state">💻 Ainda não há experiências com tecnologia registradas.</div>';
                 return;
             }
 
-            container.innerHTML = experienciasComTecnologia.map((contrib, index) => {
+            container.innerHTML = experiencias.map((exp, index) => {
                 const perfilEmoji = {
                     'Professor': '👨‍🏫',
                     'Estudante': '🎓',
                     'Gestor Educacional': '💼',
                     'Pesquisador': '🔬'
-                }[contrib.Perfil] || '👤';
+                }[exp.perfil] || '👤';
 
-                // Processar ferramentas para exibir como tags
-                let ferramentasTags = '';
-                if (contrib['Ferramentas utilizadas']) {
-                    const ferramentas = contrib['Ferramentas utilizadas'].split(',').map(f => f.trim());
-                    ferramentasTags = ferramentas.map(ferramenta => 
-                        `<span class="ferramenta-tag">${ferramenta}</span>`
-                    ).join('');
-                }
+                // Extrair dicas e sugestões do texto
+                const experienciaText = exp.experiencia;
+                const temDicas = experienciaText.toLowerCase().includes('dica') || 
+                                experienciaText.toLowerCase().includes('suger') ||
+                                experienciaText.toLowerCase().includes('recomend');
 
                 return `
                     <div class="experiencia-item">
                         <div class="experiencia-header">
-                            <span class="perfil-badge">${perfilEmoji} ${contrib.Perfil}</span>
-                            <span class="contribuicao-data">${contrib['Conhecimento em informática'] || 'Nível não informado'}</span>
+                            <span class="perfil-badge">${perfilEmoji} ${exp.perfil}</span>
+                            ${exp.conhecimento ? 
+                                `<span class="conhecimento-badge">${exp.conhecimento}</span>` : ''}
                         </div>
                         
-                        ${contrib['Ferramentas utilizadas'] ? `
-                        <div>
-                            <strong>🛠️ Ferramentas Utilizadas:</strong>
-                            <div class="ferramentas-tags">
-                                ${ferramentasTags}
+                        <div class="experiencia-content">
+                            <div class="experiencia-topic">
+                                <h4>💭 Experiência Compartilhada</h4>
+                                <p>${experienciaText}</p>
                             </div>
+                            
+                            ${temDicas ? `
+                            <div class="experiencia-topic">
+                                <h4>💡 Dicas e Sugestões</h4>
+                                <div class="dica-item">
+                                    <p>${extrairDicas(experienciaText)}</p>
+                                </div>
+                            </div>
+                            ` : ''}
                         </div>
-                        ` : ''}
-                        
-                        ${contrib['Frequência de uso'] ? `
-                        <div style="margin-top: 0.5rem;">
-                            <strong>📊 Frequência:</strong> ${contrib['Frequência de uso']}
-                        </div>
-                        ` : ''}
-                        
-                        ${contrib['Aplicação prática'] ? `
-                        <div style="margin-top: 0.5rem;">
-                            <strong>💡 Como aplica:</strong> ${contrib['Aplicação prática']}
-                        </div>
-                        ` : ''}
                     </div>
                 `;
             }).join('');
         }
 
+        // Função para extrair dicas do texto
+        function extrairDicas(texto) {
+            // Simplificação - na prática você poderia usar processamento mais sofisticado
+            const frases = texto.split(/[.!?]+/).filter(frase => 
+                frase.toLowerCase().includes('dica') || 
+                frase.toLowerCase().includes('suger') ||
+                frase.toLowerCase().includes('recomend') ||
+                frase.toLowerCase().includes('melhor')
+            );
+            
+            return frases.length > 0 ? frases.join('. ') + '.' : texto;
+        }
+
         function showError() {
-            document.getElementById('contribuicoes-container').innerHTML = 
-                '<div class="empty-state">❌ Erro ao carregar dados. Tente novamente.</div>';
             document.getElementById('experiencias-container').innerHTML = 
-                '<div class="empty-state">❌ Erro ao carregar experiências.</div>';
+                '<div class="empty-state">❌ Erro ao carregar experiências. Tente novamente mais tarde.</div>';
         }
 
         function showEmptyState() {
-            document.getElementById('contribuicoes-container').innerHTML = 
-                '<div class="empty-state">📝 Ainda não há contribuições. Seja o primeiro!</div>';
-            document.getElementById('experiencias-container').innerHTML = 
-                '<div class="empty-state">💻 Compartilhe sua experiência com tecnologia!</div>';
+            document.getElementById('experiencias-container').innerHTML = `
+                <div class="empty-state">
+                    <h3>💡 Seja o Primeiro!</h3>
+                    <p>Compartilhe sua experiência com tecnologia em sala de aula e inspire outros educadores.</p>
+                    <a href="https://docs.google.com/forms/d/1FAIpQLSdLc721XFzDzlku7E6r2PIrwnQD4k0fYMY7OCwGFjVaGTBUXA" 
+                       target="_blank" class="btn btn-accent">Compartilhar Minha Experiência</a>
+                </div>
+            `;
         }
 
         // Carregar dados quando a página abrir
